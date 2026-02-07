@@ -7,115 +7,117 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* This looks for your custom image file */
         .hero-bg {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                         url('TennisBackground.png'); 
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect for modern feel */
+            /* Changed to scroll for mobile to prevent "shaking" bugs, kept fixed for desktop */
+            background-attachment: scroll; 
+        }
+        @media (min-width: 768px) {
+            .hero-bg { background-attachment: fixed; }
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
 
     <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 p-4 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-black italic tracking-tighter text-emerald-600">Jayant Chowdhary</div>
-            <div class="hidden md:flex space-x-8 font-bold text-slate-600 uppercase text-sm tracking-widest">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-xl md:text-2xl font-black italic tracking-tighter text-emerald-600">Jayant Chowdhary</div>
+            <div class="flex space-x-6 md:space-x-8 font-bold text-slate-600 uppercase text-xs md:text-sm tracking-widest">
                 <a href="#videos" class="hover:text-emerald-600 transition">Videos</a>
-                <a href="#analysis" class="hover:text-emerald-600 transition">Video Method</a>
+                <a href="#analysis" class="hover:text-emerald-600 transition">Method</a>
                 <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-6 py-20">
-        <div class="max-w-4xl mx-auto bg-black/20 backdrop-blur-md p-10 rounded-3xl border border-white/10 shadow-2xl">
-            <h1 class="text-white text-5xl md:text-7xl font-black mb-4 uppercase leading-none">
-                Learn the Healthiest sport on Planet Earth! <br>
-                <span class="text-emerald-400"></span>
+    <section class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4 py-12 md:py-20">
+        <div class="max-w-4xl mx-auto bg-black/30 backdrop-blur-md p-6 md:p-10 rounded-3xl border border-white/10 shadow-2xl">
+            <h1 class="text-white text-3xl md:text-7xl font-black mb-4 uppercase leading-tight">
+                Learn the Healthiest sport on Planet Earth!
             </h1>
-            <p class="text-slate-100 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-medium">
+            <p class="text-slate-100 text-base md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto font-medium">
                 Tennis Coaching using video analysis to make you fall in love with Tennis.
             </p>
 
-            <div class="relative mx-auto w-96 h-96 md:w-96 md:h-96 rounded-full border-8 border-emerald-400 p-2 bg-white/20 backdrop-blur-sm overflow-hidden shadow-2xl transition-transform hover:scale-105 duration-500">
+            <div class="relative mx-auto w-64 h-64 md:w-96 md:h-96 rounded-full border-4 md:border-8 border-emerald-400 p-1 md:p-2 bg-white/20 backdrop-blur-sm overflow-hidden shadow-2xl transition-transform hover:scale-105 duration-500">
                 <div class="w-full h-full rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
-                    <img src="ProfilePic.jpg" alt="Coach Photo" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'text-slate-400\'><i class=\'fa-solid fa-user text-8xl mb-2\'></i><p class=\'font-bold tracking-widest uppercase\'>Coach Image Here</p></div>'">
+                    <img src="ProfilePic.jpg" alt="Coach Photo" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'text-slate-400 text-center\'><i class=\'fa-solid fa-user text-5xl md:text-8xl mb-2\'></i><p class=\'font-bold text-[10px] md:text-sm tracking-widest uppercase\'>Coach Image Here</p></div>'">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="analysis" class="py-24 bg-white border-b border-slate-200">
+    <section id="analysis" class="py-16 md:py-24 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl font-black mb-4 uppercase tracking-tight underline decoration-emerald-500 decoration-8 underline-offset-4">The Video Advantage</h2>
-                <p class="text-slate-500 text-lg mt-6">Seeing your own mechanics is the fastest path to technical mastery.</p>
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight underline decoration-emerald-500 decoration-[6px] md:decoration-8 underline-offset-4">The Video Advantage</h2>
+                <p class="text-slate-500 text-base md:text-lg mt-4">Seeing your own mechanics is the fastest path to technical mastery.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-16">
-                <div class="group">
-                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mb-8 transform group-hover:rotate-12 transition-all shadow-sm">
-                        <i class="fa-solid fa-video text-3xl"></i>
+            <div class="grid md:grid-cols-3 gap-10 md:gap-16">
+                <div class="group text-center md:text-left">
+                    <div class="mx-auto md:mx-0 w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mb-6 md:mb-8 transform group-hover:rotate-12 transition-all shadow-sm">
+                        <i class="fa-solid fa-video text-2xl md:text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic">High-Speed Analysis</h3>
-                    <p class="text-slate-600 leading-relaxed">We capture your strokes at 240fps to break down the kinetic chain from feet to racquet head.</p>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 italic">High-Speed Analysis</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">We capture your strokes at 240fps to break down the kinetic chain from feet to racquet head.</p>
                 </div>
-                <div class="group">
-                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mb-8 transform group-hover:rotate-12 transition-all shadow-sm">
-                        <i class="fa-solid fa-pencil text-3xl"></i>
+                <div class="group text-center md:text-left">
+                    <div class="mx-auto md:mx-0 w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mb-6 md:mb-8 transform group-hover:rotate-12 transition-all shadow-sm">
+                        <i class="fa-solid fa-pencil text-2xl md:text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Visual Mapping</h3>
-                    <p class="text-slate-600 leading-relaxed">Side-by-side comparisons with pro-level mechanics and on-screen drawing for precise feedback.</p>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 italic">Visual Mapping</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">Side-by-side comparisons with pro-level mechanics and on-screen drawing for precise feedback.</p>
                 </div>
-                <div class="group">
-                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mb-8 transform group-hover:rotate-12 transition-all shadow-sm">
-                        <i class="fa-solid fa-trophy text-3xl"></i>
+                <div class="group text-center md:text-left">
+                    <div class="mx-auto md:mx-0 w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mb-6 md:mb-8 transform group-hover:rotate-12 transition-all shadow-sm">
+                        <i class="fa-solid fa-trophy text-2xl md:text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Result Tracking</h3>
-                    <p class="text-slate-600 leading-relaxed">Build a digital library of your progress to ensure your habits stay corrected over time.</p>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 italic">Result Tracking</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">Build a digital library of your progress to ensure your habits stay corrected over time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="videos" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-black mb-16 uppercase italic text-center">Featured Technique Videos</h2>
-        <div class="grid md:grid-cols-2 gap-12">
+    <section id="videos" class="py-16 md:py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black mb-12 md:mb-16 uppercase italic text-center">Featured Technique Videos</h2>
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
             <div class="bg-white p-3 rounded-[2rem] shadow-2xl shadow-emerald-900/10 border border-slate-100">
                 <div class="aspect-video rounded-[1.5rem] overflow-hidden bg-slate-900 shadow-inner">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ssXHaSBGNZc?si=PrOJ5c_CoSVItfKl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/ssXHaSBGNZc?si=PrOJ5c_CoSVItfKl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="p-6">
-                    <h4 class="font-black text-xl text-slate-800 uppercase italic">The Modern Forehand</h4>
-                    <p class="text-slate-500 text-sm mt-1">Learn the ATP style Forehand</p>
+                    <h4 class="font-black text-lg md:text-xl text-slate-800 uppercase italic">The Modern Forehand</h4>
+                    <p class="text-slate-500 text-xs md:text-sm mt-1">Learn the ATP style Forehand</p>
                 </div>
             </div>
             <div class="bg-white p-3 rounded-[2rem] shadow-2xl shadow-emerald-900/10 border border-slate-100">
                 <div class="aspect-video rounded-[1.5rem] overflow-hidden bg-slate-900 shadow-inner">
-                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/kw-_jwITfP0?si=8HNMgwQFYQHQoR_v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/kw-_jwITfP0?si=8HNMgwQFYQHQoR_v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="p-6">
-                    <h4 class="font-black text-xl text-slate-800 uppercase italic">Serve Technique</h4>
-                    <p class="text-slate-500 text-sm mt-1">Learn efficient biomechanics for the serve</p>
+                    <h4 class="font-black text-lg md:text-xl text-slate-800 uppercase italic">Serve Technique</h4>
+                    <p class="text-slate-500 text-xs md:text-sm mt-1">Learn efficient biomechanics for the serve</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 bg-slate-900 text-white relative overflow-hidden">
+    <section id="contact" class="py-24 md:py-32 bg-slate-900 text-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full bg-emerald-600/10 opacity-30"></div>
         <div class="max-w-7xl mx-auto text-center px-6 relative z-10">
-            <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter italic">Get In Touch</h2>
-            <p class="text-slate-400 mb-6 text-xl">For private lessons or video technical analysis:</p>
-            <a href="mailto:jcsftenniscoaching@gmail.com" class="text-3xl md:text-5xl font-mono text-emerald-400 hover:text-white transition-all underline decoration-emerald-500 decoration-4 underline-offset-8">
+            <h2 class="text-3xl md:text-4xl font-black mb-6 md:mb-8 uppercase tracking-tighter italic">Get In Touch</h2>
+            <p class="text-slate-400 mb-6 text-lg md:text-xl px-4">For private lessons or video technical analysis:</p>
+            <a href="mailto:jcsftenniscoaching@gmail.com" class="break-all text-xl sm:text-2xl md:text-5xl font-mono text-emerald-400 hover:text-white transition-all underline decoration-emerald-500 decoration-4 underline-offset-8">
                 jcsftenniscoaching@gmail.com
             </a>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-slate-500 text-xs font-bold tracking-widest uppercase bg-slate-900 border-t border-white/5">
+    <footer class="py-10 text-center text-slate-500 text-[10px] md:text-xs font-bold tracking-widest uppercase bg-slate-900 border-t border-white/5">
         &copy; 2026 JCSF Tennis Coaching. All rights reserved.
     </footer>
 
